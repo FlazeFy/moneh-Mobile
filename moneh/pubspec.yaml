@@ -43,6 +43,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   http: ^0.13.6
+  syncfusion_flutter_charts: ^21.1.39
 
 dev_dependencies:
   flutter_test:

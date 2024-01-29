@@ -49,7 +49,7 @@ class _GetDashboardSummary extends State<GetDashboardSummary> {
     //double fullHeight = MediaQuery.of(context).size.height;
     double fullWidth = MediaQuery.of(context).size.width;
 
-    return Container(
+    return SizedBox(
       width: fullWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

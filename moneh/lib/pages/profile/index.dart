@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:moneh/components/containers/tile.dart';
+import 'package:moneh/modules/variables/style.dart';
+import 'package:moneh/pages/stats_flows/index.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key key}) : super(key: key);
@@ -15,14 +19,21 @@ class _ProfilePageState extends State<ProfilePage> {
 
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.only(top: fullHeight * 0.06),
-        children: [
-          Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [])
-        ],
-      ),
+          padding: EdgeInsets.only(
+              top: fullHeight * 0.06, left: spaceMD, right: spaceMD),
+          children: [
+            getTile(() => Get.to(const StatsFlowsPage()), "Stats Flows",
+                Icons.bar_chart, primaryColor),
+            getTile(null, "Stats Pocket", Icons.bar_chart, primaryColor),
+            getTile(null, "Stats Wishlist", Icons.bar_chart, primaryColor),
+            getTile(null, "Stats Others", Icons.bar_chart, primaryColor),
+            SizedBox(height: spaceMD),
+            Divider(color: greyColor),
+            getTile(null, "Feedback", Icons.feedback, infoBG),
+            getTile(null, "Help", Icons.help, infoBG),
+            getTile(null, "About", Icons.info, infoBG),
+            getTile(null, "Sign Out", Icons.close, warningDarkBG)
+          ]),
     );
   }
 }
