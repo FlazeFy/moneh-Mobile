@@ -5,14 +5,14 @@ import 'package:moneh/modules/apis/stats/services/queries.dart';
 import 'package:moneh/modules/variables/global.dart';
 import 'package:moneh/modules/variables/style.dart';
 
-class GetTotalPocketByType extends StatefulWidget {
-  const GetTotalPocketByType({Key key}) : super(key: key);
+class GetTotalWishlistByType extends StatefulWidget {
+  const GetTotalWishlistByType({Key key}) : super(key: key);
 
   @override
-  State<GetTotalPocketByType> createState() => _GetTotalPocketByTypeState();
+  State<GetTotalWishlistByType> createState() => _GetTotalWishlistByTypeState();
 }
 
-class _GetTotalPocketByTypeState extends State<GetTotalPocketByType> {
+class _GetTotalWishlistByTypeState extends State<GetTotalWishlistByType> {
   List<PieData> chartData = [];
   QueriesStatsService apiService;
 
@@ -30,7 +30,7 @@ class _GetTotalPocketByTypeState extends State<GetTotalPocketByType> {
     return SafeArea(
       maintainBottomViewPadding: false,
       child: FutureBuilder(
-        future: apiService.getTotalPocketByType(),
+        future: apiService.getTotalWishlistByType(),
         builder: (BuildContext context,
             AsyncSnapshot<List<QueriesPieChartModel>> snapshot) {
           if (snapshot.hasError) {
@@ -61,6 +61,6 @@ class _GetTotalPocketByTypeState extends State<GetTotalPocketByType> {
   Widget _buildListView(List<PieData> contents) {
     return Container(
         margin: EdgeInsets.all(spaceSM),
-        child: getPieChart(chartData, 'Total Pocket By Type'));
+        child: getPieChart(chartData, 'Total Wishlist By Type'));
   }
 }
