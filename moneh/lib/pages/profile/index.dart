@@ -11,7 +11,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     double fullHeight = MediaQuery.of(context).size.height;
-    double fullWidth = MediaQuery.of(context).size.width;
+    // double fullWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: ListView(
@@ -20,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [])
+              children: const [])
         ],
       ),
     );

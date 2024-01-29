@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:moneh/components/navbars/bottom.dart';
 import 'package:moneh/modules/variables/style.dart';
-import 'package:moneh/pages/dashboard/index.dart';
 
 bool shouldUseFirestoreEmulator = false;
 

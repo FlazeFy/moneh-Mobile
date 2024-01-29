@@ -23,17 +23,27 @@ double iconMD = 22.0;
 double iconSMD = 16.0;
 double iconXSM = 12.5;
 
-// Text Size
-double textJumbo = 33.0;
-double textLg = 20.0;
-double textMd = 16.0;
-double textSm = 13.5;
-double textXsm = 10.5;
+/* Typography */
+double textHuge = 78;
+double textXJumbo = 48;
+double textJumbo = 26;
+double textXLG = 18;
+double textLG = 16;
+double textXMD = 14;
+double textMD = 13;
+double textSM = 12;
+double textXSM = 11;
 
-// Padding
-double paddingDivider = 12;
-double paddingContentSM = 6;
-double paddingContainerLG = 16;
+// Spacing
+double spaceJumbo = 35;
+double spaceXLG = 24;
+double spaceLG = 20;
+double spaceXMD = 16;
+double spaceMD = 12;
+double spaceSM = 10;
+double spaceXSM = 8;
+double spaceXXSM = 6;
+double spaceMini = 4;
 
 // Font Weight
 FontWeight titleWeight = FontWeight.bold;
