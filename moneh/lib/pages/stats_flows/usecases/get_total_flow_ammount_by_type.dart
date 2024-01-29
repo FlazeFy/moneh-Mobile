@@ -5,14 +5,15 @@ import 'package:moneh/modules/apis/stats/services/queries.dart';
 import 'package:moneh/modules/variables/global.dart';
 import 'package:moneh/modules/variables/style.dart';
 
-class GetTotalFlowItemByType extends StatefulWidget {
-  const GetTotalFlowItemByType({Key key}) : super(key: key);
+class GetTotalFlowAmmountByType extends StatefulWidget {
+  const GetTotalFlowAmmountByType({Key key}) : super(key: key);
 
   @override
-  State<GetTotalFlowItemByType> createState() => _GetTotalFlowItemByTypeState();
+  State<GetTotalFlowAmmountByType> createState() =>
+      _GetTotalFlowAmmountByTypeState();
 }
 
-class _GetTotalFlowItemByTypeState extends State<GetTotalFlowItemByType> {
+class _GetTotalFlowAmmountByTypeState extends State<GetTotalFlowAmmountByType> {
   List<PieData> chartData = [];
   QueriesStatsService apiService;
 
@@ -30,7 +31,7 @@ class _GetTotalFlowItemByTypeState extends State<GetTotalFlowItemByType> {
     return SafeArea(
       maintainBottomViewPadding: false,
       child: FutureBuilder(
-        future: apiService.getTotalFlowsItemByType(),
+        future: apiService.getTotalFlowsAmmountByType(),
         builder: (BuildContext context,
             AsyncSnapshot<List<QueriesPieChartModel>> snapshot) {
           if (snapshot.hasError) {
@@ -61,6 +62,6 @@ class _GetTotalFlowItemByTypeState extends State<GetTotalFlowItemByType> {
   Widget _buildListView(List<PieData> contents) {
     return Container(
         margin: EdgeInsets.all(spaceSM),
-        child: getPieChart(chartData, 'Total Flow Item By Type'));
+        child: getPieChart(chartData, 'Total Flow Ammount By Type'));
   }
 }

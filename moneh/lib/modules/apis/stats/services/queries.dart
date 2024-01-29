@@ -16,9 +16,20 @@ class QueriesStatsService {
     }
   }
 
-  Future<List<QueriesPieChartModel>> getTotalFlowsByType() async {
+  Future<List<QueriesPieChartModel>> getTotalFlowsItemByType() async {
     final response = await client.get(
       Uri.parse("$baseUrl/api/v1/stats/flowtype/desc"),
+    );
+    if (response.statusCode == 200) {
+      return queriesPieChartModelFromJson(response.body);
+    } else {
+      return null;
+    }
+  }
+
+  Future<List<QueriesPieChartModel>> getTotalFlowsAmmountByType() async {
+    final response = await client.get(
+      Uri.parse("$baseUrl/api/v1/stats/ammountflowtype/desc"),
     );
     if (response.statusCode == 200) {
       return queriesPieChartModelFromJson(response.body);

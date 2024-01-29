@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneh/modules/variables/style.dart';
+import 'package:moneh/pages/stats_flows/usecases/get_total_flow_ammount_by_type.dart';
 import 'package:moneh/pages/stats_flows/usecases/get_total_flow_item_by_type.dart';
 
 class StatsFlowsPage extends StatefulWidget {
@@ -19,7 +20,10 @@ class _StatsFlowsPageState extends State<StatsFlowsPage> {
       body: ListView(
           padding: EdgeInsets.only(
               top: fullHeight * 0.06, left: spaceMD, right: spaceMD),
-          children: const [GetTotalFlowItemByType()]),
+          children: const [
+            GetTotalFlowItemByType(),
+            GetTotalFlowAmmountByType()
+          ]),
     );
   }
 }
