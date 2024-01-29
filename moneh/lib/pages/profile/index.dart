@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:moneh/components/containers/tile.dart';
 import 'package:moneh/modules/variables/style.dart';
 import 'package:moneh/pages/stats_flows/index.dart';
+import 'package:moneh/pages/stats_pocket/index.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key key}) : super(key: key);
@@ -24,7 +25,8 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             getTile(() => Get.to(const StatsFlowsPage()), "Stats Flows",
                 Icons.bar_chart, primaryColor),
-            getTile(null, "Stats Pocket", Icons.bar_chart, primaryColor),
+            getTile(() => Get.to(const StatsPocketPage()), "Stats Pocket",
+                Icons.bar_chart, primaryColor),
             getTile(null, "Stats Wishlist", Icons.bar_chart, primaryColor),
             getTile(null, "Stats Others", Icons.bar_chart, primaryColor),
             SizedBox(height: spaceMD),

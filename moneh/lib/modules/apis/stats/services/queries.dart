@@ -37,4 +37,15 @@ class QueriesStatsService {
       return null;
     }
   }
+
+  Future<List<QueriesPieChartModel>> getTotalPocketByType() async {
+    final response = await client.get(
+      Uri.parse("$baseUrl/api/v1/stats/pockettype/desc"),
+    );
+    if (response.statusCode == 200) {
+      return queriesPieChartModelFromJson(response.body);
+    } else {
+      return null;
+    }
+  }
 }
