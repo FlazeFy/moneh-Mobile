@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneh/modules/variables/style.dart';
+import 'package:moneh/pages/stats_wishlist/usecases/get_total_wishlist_by_is_achieved.dart';
 import 'package:moneh/pages/stats_wishlist/usecases/get_total_wishlist_by_priority.dart';
 import 'package:moneh/pages/stats_wishlist/usecases/get_total_wishlist_by_type.dart';
 
@@ -22,7 +23,8 @@ class _StatsWishlistPageState extends State<StatsWishlistPage> {
               top: fullHeight * 0.06, left: spaceMD, right: spaceMD),
           children: const [
             GetTotalWishlistByType(),
-            GetTotalWishlistByPriority()
+            GetTotalWishlistByPriority(),
+            GetTotalWishlistByIsAchieved()
           ]),
     );
   }

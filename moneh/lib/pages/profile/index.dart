@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:moneh/components/containers/tile.dart';
 import 'package:moneh/modules/variables/style.dart';
 import 'package:moneh/pages/stats_flows/index.dart';
+import 'package:moneh/pages/stats_others/index.dart';
 import 'package:moneh/pages/stats_pocket/index.dart';
 import 'package:moneh/pages/stats_wishlist/index.dart';
 
@@ -30,7 +31,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 Icons.bar_chart, primaryColor),
             getTile(() => Get.to(const StatsWishlistPage()), "Stats Wishlist",
                 Icons.bar_chart, primaryColor),
-            getTile(null, "Stats Others", Icons.bar_chart, primaryColor),
+            getTile(() => Get.to(const StatsOthersPage()), "Stats Others",
+                Icons.bar_chart, primaryColor),
             SizedBox(height: spaceMD),
             Divider(color: greyColor),
             getTile(null, "Feedback", Icons.feedback, infoBG),
