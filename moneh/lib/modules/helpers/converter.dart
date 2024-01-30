@@ -23,3 +23,16 @@ String getMessageResponseFromObject(val, type) {
     return res;
   }
 }
+
+String numberToPrice(int val) {
+  try {
+    if (val >= 1000) {
+      final res = (val / 1000).toStringAsFixed(0);
+      return '$res K';
+    } else {
+      return val.toString();
+    }
+  } catch (error) {
+    rethrow;
+  }
+}

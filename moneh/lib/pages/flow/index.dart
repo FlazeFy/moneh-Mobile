@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneh/pages/flow/usecases/get_summary.dart';
 
 class FlowPage extends StatefulWidget {
   const FlowPage({Key key}) : super(key: key);
@@ -16,12 +17,7 @@ class _FlowPageState extends State<FlowPage> {
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.only(top: fullHeight * 0.06),
-        children: [
-          Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [])
-        ],
+        children: [GetFlowSummary()],
       ),
     );
   }
