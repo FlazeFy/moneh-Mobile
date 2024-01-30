@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneh/components/Navbars/top.dart';
 import 'package:moneh/modules/variables/style.dart';
 import 'package:moneh/pages/stats_wishlist/usecases/get_total_wishlist_by_is_achieved.dart';
 import 'package:moneh/pages/stats_wishlist/usecases/get_total_wishlist_by_priority.dart';
@@ -14,13 +15,14 @@ class StatsWishlistPage extends StatefulWidget {
 class _StatsWishlistPageState extends State<StatsWishlistPage> {
   @override
   Widget build(BuildContext context) {
-    double fullHeight = MediaQuery.of(context).size.height;
+    const pageTitle = "Stats Wishlist";
+    //double fullHeight = MediaQuery.of(context).size.height;
     // double fullWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: getAppbar(pageTitle),
       body: ListView(
-          padding: EdgeInsets.only(
-              top: fullHeight * 0.06, left: spaceMD, right: spaceMD),
+          padding: EdgeInsets.only(top: spaceMD, left: spaceMD, right: spaceMD),
           children: const [
             GetTotalWishlistByType(),
             GetTotalWishlistByPriority(),

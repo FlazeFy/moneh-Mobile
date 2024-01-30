@@ -50,7 +50,7 @@ List<QueriesDashboardModel> queriesDashboardModelFromJson(String jsonData) {
       data['data'].map((item) => QueriesDashboardModel.fromJson(item)));
 }
 
-// Usecase get pie chart
+// Usecase get pie & bar chart
 class QueriesPieChartModel {
   String ctx;
   int total;

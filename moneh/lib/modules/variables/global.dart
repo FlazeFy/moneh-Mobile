@@ -7,3 +7,10 @@ class PieData {
   final num yData;
   final String text;
 }
+
+class BarData {
+  BarData(this.xData, this.yData);
+
+  final String xData;
+  final double yData;
+}
