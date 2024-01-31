@@ -89,7 +89,7 @@ class _GetFlowSummary extends State<GetFlowSummary> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
