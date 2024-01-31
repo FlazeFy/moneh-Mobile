@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneh/pages/pocket/usecases/get_all_pocket.dart';
 
 class PocketPage extends StatefulWidget {
   const PocketPage({Key key}) : super(key: key);
@@ -20,7 +21,7 @@ class _PocketPageState extends State<PocketPage> {
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [])
+              children: [GetAllPocket()])
         ],
       ),
     );
