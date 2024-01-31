@@ -133,7 +133,7 @@ class _GetAllFlow extends State<GetAllFlow> {
 
     return SizedBox(
       width: fullWidth,
-      child: getTable(builder, items),
+      child: getTable(builder, items, "Flow"),
     );
   }
 }

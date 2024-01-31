@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:moneh/pages/flow/usecases/get_all_flow.dart';
 import 'package:moneh/pages/flow/usecases/get_summary.dart';
 
@@ -15,11 +16,13 @@ class _FlowPageState extends State<FlowPage> {
     double fullHeight = MediaQuery.of(context).size.height;
     // double fullWidth = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-      body: ListView(
-        padding: EdgeInsets.only(top: fullHeight * 0.06),
-        children: [GetFlowSummary(), GetAllFlow()],
-      ),
-    );
+    return WillPopScope(
+        onWillPop: () => SystemNavigator.pop(),
+        child: Scaffold(
+          body: ListView(
+            padding: EdgeInsets.only(top: fullHeight * 0.06),
+            children: [GetFlowSummary(), GetAllFlow()],
+          ),
+        ));
   }
 }

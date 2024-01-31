@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:moneh/components/containers/button.dart';
+import 'package:moneh/components/tables/manage.dart';
 import 'package:moneh/modules/variables/style.dart';
 
-Widget getTable(var build, items) {
+Widget getTable(var build, items, String ctx) {
   return Container(
       margin: EdgeInsets.symmetric(horizontal: spaceMD),
       child: SingleChildScrollView(
@@ -13,7 +13,6 @@ Widget getTable(var build, items) {
           child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: DataTable(
-                columnSpacing: spaceLG,
                 dataTextStyle: TextStyle(color: whiteColor),
                 border: TableBorder.all(
                     color: greyColor,
@@ -57,7 +56,13 @@ Widget getTable(var build, items) {
                                                   [build[j]["object_name"]]
                                               .toString()))
                                       : const SizedBox())
-                              : const DataCell(SizedBox())
+                              : items[i][build[j]['column_name']] != 'Manage' &&
+                                      items[i][build[j]['object_name']] == null
+                                  ? DataCell(SizedBox(
+                                      child:
+                                          getManageTable(ctx, build, items, i),
+                                    ))
+                                  : const DataCell(SizedBox())
                       ],
                     ),
                 ],
