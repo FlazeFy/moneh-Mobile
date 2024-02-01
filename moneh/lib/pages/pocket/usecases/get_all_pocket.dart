@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moneh/components/tables/table.dart';
 import 'package:moneh/modules/apis/pockets/models/queries.dart';
 import 'package:moneh/modules/apis/pockets/services/queries.dart';
+import 'package:moneh/modules/variables/global.dart';
 
 class GetAllPocket extends StatefulWidget {
   GetAllPocket({Key key, this.type}) : super(key: key);
@@ -59,7 +60,7 @@ class _GetAllPocket extends State<GetAllPocket> {
     //double fullHeight = MediaQuery.of(context).size.height;
     double fullWidth = MediaQuery.of(context).size.width;
 
-    const builder = [
+    var builder = [
       {
         "column_name": "Name",
         "object_name": "pocketName",
@@ -84,9 +85,14 @@ class _GetAllPocket extends State<GetAllPocket> {
         "object_name": "pocketType",
         "extra_desc": null,
         "type": 'select',
-        "class": "form-control",
+        "action": (String newValue) {
+          setState(() {
+            slctPocketType = newValue;
+          });
+        },
+        "opt_select": slctPocketType,
+        "opt_list": pocketTypeOpt,
         "placeholder": 'Select pocket type',
-        "url": 'http://127.0.0.1:1323/api/v1/dct/pockets_type?page=1'
       },
       {
         "column_name": "Bottom Limit",

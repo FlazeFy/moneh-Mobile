@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moneh/components/tables/table.dart';
 import 'package:moneh/modules/apis/flows/models/queries.dart';
 import 'package:moneh/modules/apis/flows/services/queries.dart';
+import 'package:moneh/modules/variables/global.dart';
 
 class GetAllFlow extends StatefulWidget {
   GetAllFlow({Key key, this.type}) : super(key: key);
@@ -62,29 +63,37 @@ class _GetAllFlow extends State<GetAllFlow> {
     //double fullHeight = MediaQuery.of(context).size.height;
     double fullWidth = MediaQuery.of(context).size.width;
 
-    const builder = [
+    var builder = [
       {
         "column_name": "Type",
         "object_name": "flowType",
         "extra_desc": null,
         "type": 'select',
+        "action": (String newValue) {
+          setState(() {
+            slctFlowType = newValue;
+          });
+        },
+        "opt_select": slctFlowType,
+        "opt_list": ["spending", "income"],
         "class": 'form-control',
         "label": 'Flow Type',
         "placeholder": 'Type flow type',
-        "url": [
-          {"dictionaries_name": "spending"},
-          {"dictionaries_name": "income"}
-        ],
       },
       {
         "column_name": "Category",
         "object_name": "flowCategory",
         "extra_desc": null,
         "type": 'select',
-        "class": 'form-control',
+        "action": (String newValue) {
+          setState(() {
+            slctFlowCat = newValue;
+          });
+        },
+        "opt_select": slctFlowCat,
+        "opt_list": flowCatOpt,
         "label": 'Flow Category',
         "placeholder": 'Select flow category',
-        "url": 'http://127.0.0.1:1323/api/v1/dct/flows_category?page=1'
       },
       {
         "column_name": "Name",

@@ -48,3 +48,11 @@ double spaceMini = 4;
 // Font Weight
 FontWeight titleWeight = FontWeight.bold;
 FontWeight subTitleWeight = FontWeight.w500;
+
+// Props
+OutlineInputBorder borderInputProp = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(spaceSM),
+  borderSide: BorderSide(
+    color: whiteColor,
+  ),
+);

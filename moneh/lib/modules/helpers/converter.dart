@@ -36,3 +36,16 @@ String numberToPrice(int val) {
     rethrow;
   }
 }
+
+String getSeparatedAfter(String divider, String value) {
+  List<String> res = value.split(divider);
+  return res[1];
+}
+
+String ucFirst(String val) {
+  String res = "";
+  if (val != null && val.trim() != "") {
+    res = val[0].toUpperCase() + val.substring(1);
+  }
+  return res;
+}

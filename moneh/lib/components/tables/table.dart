@@ -74,6 +74,6 @@ Widget getTag(var tag) {
 
   return Wrap(
       children: tags.map<Widget>((tg) {
-    return getButton(() {}, tg['tag_name'], "tag");
+    return getButton(() {}, tg['tag_name'], "tag", infoBG);
   }).toList());
 }
